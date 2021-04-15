@@ -12,11 +12,19 @@ config :pay_phoenix,
 
 # Configures the endpoint
 config :pay_phoenix, PayPhoenixWeb.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "DC7/M+SZVMUKNuEbkvfxkEfa1CU9IxXmjeeYTMBa8eBO7q7Fj7dBUvIvuBKxKZW+",
-  render_errors: [view: PayPhoenixWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: PayPhoenix.PubSub,
-  live_view: [signing_salt: "mHW1k4l1"]
+url: [host: "localhost"],
+secret_key_base: "H3+kJoCwGKK4YDsYYUiN0Y1m7jynmS6fklPUx2Hqs1AmiIWAvzPH6223ixIyyFAx",
+render_errors: [view: PayPhoenixWeb.ErrorView, accepts: ~w(json), layout: false],
+pubsub_server: PayPhoenix.PubSub,
+live_view: [signing_salt: "2nt+6HNL"]
+
+config :pay_phoenix, PayPhoenix.Repo,
+migration_primary_key: [type: :binary_id],
+migration_foreign_key: [type: :binary_id]
+
+config :pay_phoenix, :basic_auth,
+username: "user",
+password: "12345678"
 
 # Configures Elixir's Logger
 config :logger, :console,

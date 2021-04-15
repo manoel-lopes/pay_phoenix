@@ -7,7 +7,7 @@ defmodule PayPhoenixWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_pay_phoenix_key",
-    signing_salt: "X0vmIJ1O"
+    signing_salt: "dA9GVkZ1"
   ]
 
   socket "/socket", PayPhoenixWeb.UserSocket,
