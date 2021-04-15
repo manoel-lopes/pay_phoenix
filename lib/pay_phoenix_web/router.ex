@@ -1,40 +1,5 @@
 defmodule PayPhoenixWeb.Router do
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   use PayPhoenixWeb, :router
 
   import Plug.BasicAuth
