@@ -7,24 +7,24 @@ defmodule PayPhoenix.Users.CreateTest do
   describe "call/1" do
     test "when all params are valid, returns an user" do
       params = %{
-        name: "Manoel Lopes",
+        name: "user",
         password: "12345678",
-        nickname: "manoel-lopes",
-        email: "manoel.lopes@gmail.com",
+        nickname: "new-user",
+        email: "user@gmail.com",
         age: 22
       }
 
       {:ok, %User{id: user_id}} = Create.call(params)
       user = Repo.get(User, user_id)
 
-      assert %User{name: "Manoel Lopes", age: 22, id: ^user_id} = user
+      assert %User{name: "user", age: 22, id: ^user_id} = user
     end
 
     test "when there are invalid params, returns an error" do
       params = %{
-        name: "Manoel Lopes",
-        nickname: "manoel-lopes",
-        email: "manoel.lopes@gmail.com",
+        name: "user",
+        nickname: "new-user",
+        email: "user@gmail.com",
         age: 15
       }
 

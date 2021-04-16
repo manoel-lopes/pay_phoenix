@@ -1,4 +1,4 @@
-defmodule PayPhoenix.Repo.Migrations.CreateUserTable do
+defmodule PayPhoenix.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do
