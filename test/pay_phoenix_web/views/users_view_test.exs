@@ -21,7 +21,6 @@ defmodule PayPhoenixWeb.UsersViewTest do
     response = render(UsersView, "create.json", user: user)
 
     expected_response =  %{
-      message: "User created",
       user: %{
         account: %{
           balance: Decimal.new("0.00"),

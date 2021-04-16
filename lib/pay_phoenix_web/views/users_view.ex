@@ -8,7 +8,6 @@ defmodule PayPhoenixWeb.UsersView do
           nickname: nickname
         }}) do
     %{
-      message: "User created",
       user: %{
         id: id,
         name: name,
