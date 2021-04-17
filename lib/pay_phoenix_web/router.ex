@@ -16,6 +16,7 @@ defmodule PayPhoenixWeb.Router do
     pipe_through :api
 
     post "/users", UsersController, :store
+    get "/users", UsersController, :index
   end
 
   scope "/api", PayPhoenixWeb do

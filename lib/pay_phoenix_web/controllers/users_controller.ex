@@ -12,4 +12,10 @@ defmodule PayPhoenixWeb.UsersController do
       |> render("store.json", user: user)
     end
   end
+
+  def index(conn, _params) do
+    users = PayPhoenix.get_all_users()
+
+    render(conn, "index.json", users: users)
+  end
 end
