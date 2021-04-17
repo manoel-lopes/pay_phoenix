@@ -1,9 +1,9 @@
 defmodule PayPhoenix do
-  alias PayPhoenix.Users.Create, as: UserCreate
+  alias PayPhoenix.Users.Store, as: Store
 
   alias PayPhoenix.Accounts.{Deposit, Withdraw, Transaction}
 
-  defdelegate create_user(params), to: UserCreate, as: :call
+  defdelegate create_user(params), to: Store, as: :call
 
   defdelegate deposit(params), to: Deposit, as: :call
 

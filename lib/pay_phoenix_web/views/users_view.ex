@@ -1,7 +1,7 @@
 defmodule PayPhoenixWeb.UsersView do
   alias PayPhoenix.{Account, User}
 
-  def render("create.json", %{user: %User{
+  def render("store.json", %{user: %User{
           account: %Account{id: account_id, balance: balance},
           id: id,
           name: name,

@@ -5,11 +5,11 @@ defmodule PayPhoenixWeb.UsersController do
 
   action_fallback PayPhoenixWeb.FallbackController
 
-  def create(conn, params) do
+  def store(conn, params) do
     with {:ok, %User{} = user} <- PayPhoenix.create_user(params) do
       conn
       |> put_status(:created)
-      |> render("create.json", user: user)
+      |> render("store.json", user: user)
     end
   end
 end
