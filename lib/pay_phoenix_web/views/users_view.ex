@@ -3,10 +3,10 @@ defmodule PayPhoenixWeb.UsersView do
 
   def render("store.json", %{
         user: %User{
-          account: %Account{id: account_id, balance: balance},
           id: id,
           name: name,
-          nickname: nickname
+          nickname: nickname,
+          account: %Account{id: account_id, balance: balance}
         }
       }) do
     %{
