@@ -10,14 +10,12 @@ defmodule PayPhoenixWeb.UsersView do
         }
       }) do
     %{
-      user: %{
-        id: id,
-        name: name,
-        nickname: nickname,
-        account: %{
-          id: account_id,
-          balance: balance
-        }
+      id: id,
+      name: name,
+      nickname: nickname,
+      account: %{
+        id: account_id,
+        balance: balance
       }
     }
   end
