@@ -25,7 +25,11 @@ defmodule PayPhoenixWeb.UsersView do
       %{
         id: user.id,
         name: user.name,
-        nickname: user.nickname
+        nickname: user.nickname,
+        account: %{
+          id: user.account.id,
+          balance: user.account.balance
+        }
       }
     end)
   end

@@ -3,5 +3,6 @@ defmodule PayPhoenix.Users.Index do
 
   def call() do
     Repo.all(User)
+    |> Repo.preload(:account)
   end
 end
