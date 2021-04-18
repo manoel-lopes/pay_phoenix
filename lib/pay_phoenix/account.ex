@@ -5,7 +5,7 @@ defmodule PayPhoenix.Account do
   alias PayPhoenix.User
 
   @primary_key {:id, :binary_id, autogenerate: true}
-  @foreign_key_type  :binary_id
+  @foreign_key_type :binary_id
 
   @required_params [
     :balance,
@@ -19,7 +19,7 @@ defmodule PayPhoenix.Account do
     timestamps()
   end
 
-  def changeset(struct \\ %__MODULE__{},  params) do
+  def changeset(struct \\ %__MODULE__{}, params) do
     struct
     |> cast(params, @required_params)
     |> validate_required(@required_params)

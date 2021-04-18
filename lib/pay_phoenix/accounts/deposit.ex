@@ -1,8 +1,7 @@
 defmodule PayPhoenix.Accounts.Deposit do
-  
   alias PayPhoenix.{Accounts.Operation, Repo}
 
-  def call( params) do
+  def call(params) do
     params
     |> Operation.call(:deposit)
     |> run_transaction()

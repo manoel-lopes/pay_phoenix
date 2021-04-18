@@ -1,9 +1,6 @@
 defmodule PayPhoenix.Accounts.Transaction do
-  
   alias Ecto.Multi
-
   alias PayPhoenix.{Accounts.Operation, Repo}
-
   alias PayPhoenix.Accounts.Transaction.Response, as: TransactionResponse
 
   def call(%{"from" => from_id, "to" => to_id, "value" => value}) do

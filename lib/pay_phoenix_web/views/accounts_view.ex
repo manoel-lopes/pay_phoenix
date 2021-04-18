@@ -1,6 +1,5 @@
 defmodule PayPhoenixWeb.AccountsView do
   alias PayPhoenix.{Account}
-
   alias PayPhoenix.Accounts.Transaction.Response, as: TransactionResponse
 
   def render("update.json", %{
@@ -21,7 +20,8 @@ defmodule PayPhoenixWeb.AccountsView do
   def render("transaction.json", %{
         transaction: %TransactionResponse{
           to_account: to_account,
-          from_account: from_account}
+          from_account: from_account
+        }
       }) do
     %{
       massage: "Transaction done successfully",

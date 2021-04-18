@@ -1,8 +1,7 @@
 defmodule PayPhoenix.Accounts.Withdraw do
-  alias PayPhoenix.Accounts.Operation
-  alias PayPhoenix.Repo
+  alias PayPhoenix.{Accounts.Operation, Repo}
 
-  def call( params) do
+  def call(params) do
     params
     |> Operation.call(:withdraw)
     |> run_transaction()
