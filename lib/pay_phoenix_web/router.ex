@@ -12,14 +12,14 @@ defmodule PayPhoenixWeb.Router do
     plug :basic_auth, Application.compile_env!(:pay_phoenix, :basic_auth)
   end
 
-  scope "/api", PayPhoenixWeb do
+  scope "/", PayPhoenixWeb do
     pipe_through :api
 
     post "/users", UsersController, :store
     get "/users", UsersController, :index
   end
 
-  scope "/api", PayPhoenixWeb do
+  scope "/", PayPhoenixWeb do
     pipe_through [:api, :auth]
 
     post "accounts/:id/deposit", AccountsController, :deposit
