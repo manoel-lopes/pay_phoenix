@@ -16,7 +16,7 @@ config :pay_phoenix, PayPhoenix.Repo,
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :pay_phoenix, PayPhoenixWeb.Endpoint,
-  http: [port: 4000],
+  http: [port: 3001],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
