@@ -20,7 +20,7 @@ defmodule PayPhoenixWeb.Router do
   end
 
   scope "/api", PayPhoenixWeb do
-    pipe_through :api
+    pipe_through [:api, :auth]
 
     post "accounts/:id/deposit", AccountsController, :deposit
     post "accounts/:id/withdraw", AccountsController, :withdraw
