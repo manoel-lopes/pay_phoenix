@@ -4,9 +4,11 @@ defmodule PayPhoenix.Accounts.Operation do
 
   def call(%{"id" => id, "value" => value}, operation) do
     operation_name = get_account_operation_name(operation)
+
     Multi.new()
     |> Multi.run(operation_name, fn repo, _changes ->
-      get_account(repo, id) end)
+      get_account(repo, id)
+    end)
     |> Multi.run(operation, fn repo, changes ->
       account = Map.get(changes, operation_name)
       update_balance(repo, account, value, operation)
@@ -29,6 +31,7 @@ defmodule PayPhoenix.Accounts.Operation do
   defp execute_operation(%Account{balance: balance}, value, operation) do
     value
     |> Decimal.cast()
+    |> validate_value()
     |> handle_cast(balance, operation)
   end
 
@@ -37,6 +40,15 @@ defmodule PayPhoenix.Accounts.Operation do
   defp handle_cast({:ok, value}, balance, :withdraw), do: Decimal.sub(balance, value)
 
   defp handle_cast(:error, _balance, _operation), do: {:error, "Invalid deposit value!"}
+
+  defp validate_value({:ok, value}) do
+    case Decimal.negative?(value) do
+      true -> :error
+      false -> {:ok, value}
+    end
+  end
+
+  defp validate_value(:error), do: :error
 
   defp update_account({:error, _reason} = error, _repo, _account), do: error
 
