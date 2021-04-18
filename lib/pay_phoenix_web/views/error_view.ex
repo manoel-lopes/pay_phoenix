@@ -18,11 +18,11 @@ defmodule PayPhoenixWeb.ErrorView do
   end
 
   def render("400.json", %{result: %Changeset{} = changeset}) do
-    %{messsgae: translate_erros(changeset)}
+    %{error: translate_erros(changeset)}
   end
 
   def render("400.json", %{result: message}) do
-    %{messsgae: message}
+    %{error: message}
   end
 
   defp translate_erros(changeset) do
