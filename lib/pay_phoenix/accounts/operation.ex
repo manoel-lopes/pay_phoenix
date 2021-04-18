@@ -35,12 +35,6 @@ defmodule PayPhoenix.Accounts.Operation do
     |> handle_cast(balance, operation)
   end
 
-  defp handle_cast({:ok, value}, balance, :deposit), do: Decimal.add(balance, value)
-
-  defp handle_cast({:ok, value}, balance, :withdraw), do: Decimal.sub(balance, value)
-
-  defp handle_cast(:error, _balance, _operation), do: {:error, "Invalid deposit value!"}
-
   defp validate_value({:ok, value}) do
     case Decimal.negative?(value) do
       true -> :error
@@ -49,6 +43,12 @@ defmodule PayPhoenix.Accounts.Operation do
   end
 
   defp validate_value(:error), do: :error
+
+  defp handle_cast({:ok, value}, balance, :deposit), do: Decimal.add(balance, value)
+
+  defp handle_cast({:ok, value}, balance, :withdraw), do: Decimal.sub(balance, value)
+
+  defp handle_cast(:error, _balance, _operation), do: {:error, "Invalid deposit value!"}
 
   defp update_account({:error, _reason} = error, _repo, _account), do: error
 
