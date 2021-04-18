@@ -12,19 +12,19 @@ defmodule PayPhoenixWeb.Router do
     plug :basic_auth, Application.compile_env!(:pay_phoenix, :basic_auth)
   end
 
-  scope "/", PayPhoenixWeb do
+  scope "/users", PayPhoenixWeb do
     pipe_through :api
 
-    post "/users", UsersController, :store
-    get "/users", UsersController, :index
+    post "/", UsersController, :store
+    get "/", UsersController, :index
   end
 
-  scope "/", PayPhoenixWeb do
+  scope "/accounts", PayPhoenixWeb do
     pipe_through [:api, :auth]
 
-    post "accounts/:id/deposit", AccountsController, :deposit
-    post "accounts/:id/withdraw", AccountsController, :withdraw
-    post "accounts/transaction", AccountsController, :transaction
+    post "/:id/deposit", AccountsController, :deposit
+    post "/:id/withdraw", AccountsController, :withdraw
+    post "/transaction", AccountsController, :transaction
 
     if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router
