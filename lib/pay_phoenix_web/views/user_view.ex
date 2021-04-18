@@ -19,18 +19,4 @@ defmodule PayPhoenixWeb.UserView do
       }
     }
   end
-
-  def render("index.json", %{users: users}) do
-    Enum.map(users, fn user ->
-      %{
-        id: user.id,
-        name: user.name,
-        nickname: user.nickname,
-        account: %{
-          id: user.account.id,
-          balance: user.account.balance
-        }
-      }
-    end)
-  end
 end
