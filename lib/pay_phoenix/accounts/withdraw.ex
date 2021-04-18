@@ -1,5 +1,5 @@
-defmodule PayPhoenix.Accounts.Withdraw do
-  alias PayPhoenix.{Accounts.Operation, Repo}
+defmodule PayPhoenix.Account.Withdraw do
+  alias PayPhoenix.{Account.Operation, Repo}
 
   def call(params) do
     params

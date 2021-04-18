@@ -15,16 +15,16 @@ defmodule PayPhoenixWeb.Router do
   scope "/users", PayPhoenixWeb do
     pipe_through :api
 
-    post "/", UsersController, :store
-    get "/", UsersController, :index
+    post "/", UserController, :store
+    get "/", UserController, :index
   end
 
   scope "/accounts", PayPhoenixWeb do
     pipe_through [:api, :auth]
 
-    post "/:id/deposit", AccountsController, :deposit
-    post "/:id/withdraw", AccountsController, :withdraw
-    post "/transaction", AccountsController, :transaction
+    post "/:id/deposit", AccountController, :deposit
+    post "/:id/withdraw", AccountController, :withdraw
+    post "/transaction", AccountController, :transaction
 
     if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router

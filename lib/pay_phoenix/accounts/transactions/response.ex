@@ -1,4 +1,4 @@
-defmodule PayPhoenix.Accounts.Transaction.Response do
+defmodule PayPhoenix.Account.Transaction.Response do
   alias PayPhoenix.Account
 
   defstruct [:from_account, :to_account]

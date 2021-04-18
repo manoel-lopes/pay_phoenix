@@ -1,4 +1,4 @@
-defmodule PayPhoenix.Accounts.Operation do
+defmodule PayPhoenix.Account.Operation do
   alias Ecto.Multi
   alias PayPhoenix.Account
 

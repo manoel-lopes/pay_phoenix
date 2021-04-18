@@ -1,8 +1,8 @@
-defmodule PayPhoenixWeb.AccountsController do
+defmodule PayPhoenixWeb.AccountController do
   use PayPhoenixWeb, :controller
 
   alias PayPhoenix.Account
-  alias PayPhoenix.Accounts.Transaction.Response, as: TransactionResponse
+  alias PayPhoenix.Account.Transaction.Response, as: TransactionResponse
 
   action_fallback PayPhoenixWeb.FallbackController
 

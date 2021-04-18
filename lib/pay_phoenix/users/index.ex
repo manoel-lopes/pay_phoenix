@@ -1,4 +1,4 @@
-defmodule PayPhoenix.Users.Index do
+defmodule PayPhoenix.User.Index do
   alias PayPhoenix.{Repo, User}
 
   def call() do

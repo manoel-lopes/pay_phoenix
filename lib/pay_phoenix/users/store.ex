@@ -1,4 +1,4 @@
-defmodule PayPhoenix.Users.Store do
+defmodule PayPhoenix.User.Store do
   alias Ecto.Multi
   alias PayPhoenix.{Account, Repo, User}
 

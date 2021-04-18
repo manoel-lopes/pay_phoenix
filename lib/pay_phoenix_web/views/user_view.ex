@@ -1,4 +1,4 @@
-defmodule PayPhoenixWeb.UsersView do
+defmodule PayPhoenixWeb.UserView do
   alias PayPhoenix.{Account, User}
 
   def render("store.json", %{

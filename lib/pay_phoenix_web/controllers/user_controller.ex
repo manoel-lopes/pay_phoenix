@@ -1,4 +1,4 @@
-defmodule PayPhoenixWeb.UsersController do
+defmodule PayPhoenixWeb.UserController do
   use PayPhoenixWeb, :controller
 
   alias PayPhoenix.User

@@ -1,7 +1,7 @@
-defmodule PayPhoenix.Accounts.Transaction do
+defmodule PayPhoenix.Account.Transaction do
   alias Ecto.Multi
-  alias PayPhoenix.{Accounts.Operation, Repo}
-  alias PayPhoenix.Accounts.Transaction.Response, as: TransactionResponse
+  alias PayPhoenix.{Account.Operation, Repo}
+  alias PayPhoenix.Account.Transaction.Response, as: TransactionResponse
 
   def call(%{"from" => from_id, "to" => to_id, "value" => value}) do
     withdraw_params = build_params(from_id, value)

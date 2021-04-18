@@ -1,6 +1,6 @@
-defmodule PayPhoenixWeb.AccountsView do
+defmodule PayPhoenixWeb.AccountView do
   alias PayPhoenix.{Account}
-  alias PayPhoenix.Accounts.Transaction.Response, as: TransactionResponse
+  alias PayPhoenix.Account.Transaction.Response, as: TransactionResponse
 
   def render("update.json", %{
         account: %Account{
