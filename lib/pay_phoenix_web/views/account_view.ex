@@ -24,16 +24,13 @@ defmodule PayPhoenixWeb.AccountView do
         }
       }) do
     %{
-      massage: "Transaction done successfully",
-      transaction: %{
-        from_account: %{
-          id: from_account.id,
-          balance: from_account.balance
-        },
-        to_account: %{
-          id: to_account.id,
-          balance: to_account.balance
-        }
+      from_account: %{
+        id: from_account.id,
+        balance: from_account.balance
+      },
+      to_account: %{
+        id: to_account.id,
+        balance: to_account.balance
       }
     }
   end
