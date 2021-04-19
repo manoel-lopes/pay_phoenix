@@ -9,7 +9,7 @@ defmodule PayPhoenixWeb.AccountView do
         }
       }) do
     %{
-      message: "Balance changed successfully",
+      success: "Balance changed successfully",
       account: %{
         id: account_id,
         balance: balance

@@ -25,7 +25,7 @@ defmodule PayPhoenixWeb.AccountsControllerTest do
 
       response =
         conn
-        |> post(Routes.accounts_path(conn, :deposit, account_id, params))
+        |> post(Routes.account_path(conn, :deposit, account_id, params))
         |> json_response(:ok)
 
       assert %{
@@ -33,7 +33,7 @@ defmodule PayPhoenixWeb.AccountsControllerTest do
                  "balance" => "5.00",
                  "id" => _id
                },
-               "message" => "Balance changed successfully"
+               "success" => "Balance changed successfully"
              } = response
     end
 
@@ -42,11 +42,11 @@ defmodule PayPhoenixWeb.AccountsControllerTest do
 
       response =
         conn
-        |> post(Routes.accounts_path(conn, :deposit, account_id, params))
+        |> post(Routes.account_path(conn, :deposit, account_id, params))
         |> json_response(:bad_request)
 
 
-      expected_response = %{"messsgae" => "Invalid deposit value!"}
+      expected_response = %{"error" => "Invalid deposit value!"}
 
       assert  expected_response == response
     end
