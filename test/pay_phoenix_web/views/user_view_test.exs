@@ -1,24 +1,24 @@
-defmodule PayPhoenixWeb.UsersViewTest do
+defmodule PayPhoenixWeb.UserViewTest do
   use PayPhoenixWeb.ConnCase, async: true
 
   import Phoenix.View
 
   alias PayPhoenix.{Account, User}
-  alias PayPhoenixWeb.UsersView
+  alias PayPhoenixWeb.UserView
 
   test "renders create.json" do
     params = %{
-      name: "Manoel Lopes",
+      name: "user",
       password: "12345678",
-      nickname: "manoel-lopes",
-      email: "manoel.lopes@gmail.com",
+      nickname: "usernick",
+      email: "user@gmail.com",
       age: 22
     }
 
     {:ok, %User{id: user_id, account: %Account{id: account_id}} = user} =
       PayPhoenix.create_user(params)
 
-    response = render(UsersView, "create.json", user: user)
+    response = render(UserView, "create.json", user: user)
 
     expected_response =  %{
       user: %{
@@ -27,8 +27,8 @@ defmodule PayPhoenixWeb.UsersViewTest do
           id: account_id
         },
         id: user_id,
-        name: "Manoel Lopes",
-        nickname: "manoel-lopes"
+        name: "user",
+        nickname: "usernick"
       }
     }
 

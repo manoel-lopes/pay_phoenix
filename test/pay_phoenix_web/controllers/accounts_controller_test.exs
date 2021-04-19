@@ -6,10 +6,10 @@ defmodule PayPhoenixWeb.AccountsControllerTest do
   describe "deposit/2" do
     setup %{conn: conn} do
       params = %{
-        name: "Manoel Lopes",
+        name: "user",
         password: "12345678",
-        nickname: "manoel-lopes",
-        email: "manoel.lopes@gmail.com",
+        nickname: "usernick",
+        email: "user@email.com",
         age: 22
       }
 
